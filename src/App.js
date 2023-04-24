@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import { FileImageOutlined, HomeOutlined } from "@ant-design/icons";
-import Viewer from "./Viewer";
+import Viewer from "./components/Viewer";
 
 const { Header, Content, Sider } = Layout;
 
