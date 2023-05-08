@@ -9,10 +9,13 @@ import {
     LineElement,
     Legend,
     Tooltip,
+    BarController,
+    LineController
 } from 'chart.js';
 import {
     Chart
 } from 'react-chartjs-2';
+import ChartWrapper from "../../common/components/ChartWrapper";
 
 ChartJS.register(
     LinearScale,
@@ -21,7 +24,9 @@ ChartJS.register(
     PointElement,
     LineElement,
     Legend,
-    Tooltip
+    Tooltip,
+    BarController,
+    LineController
 );
 
 const MonthlyExchangeProfitChart: React.FC<{}> = () => {
@@ -77,6 +82,7 @@ const MonthlyExchangeProfitChart: React.FC<{}> = () => {
 
     const options: any = {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
             x: {
                 title: {
@@ -107,9 +113,9 @@ const MonthlyExchangeProfitChart: React.FC<{}> = () => {
     }
 
     return (
-        <div className="chart-container" style={{position: 'relative', width: '100%', maxHeight: '500px' }}>
-            <Chart type={'bar'} data={data} options={options} width={400} height={400}/>
-        </div>
+        <ChartWrapper>
+            <Chart type={'bar'} data={data} options={options}/>
+        </ChartWrapper>
     );
 
 

@@ -25,3 +25,8 @@
     text-decoration: underline;
     color: inherit;
 }
+
+.chart-container {
+    height: 400px;
+    width: 100%;
+}
