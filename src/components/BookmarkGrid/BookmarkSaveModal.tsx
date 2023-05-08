@@ -86,10 +86,6 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
 
     // 북마크 수정
     if (modalStatus === ModalStatus.UPDATE) {
-      console.log(
-        "handleModalOk - > updatedBookmark: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-      );
-      console.log("updatedBookmark", updatedBookmark);
 
       resultBookmarkList = bookmarks.map((bookmark: Bookmark) => {
         if (bookmark.id === updatedBookmark?.id) {
@@ -104,11 +100,6 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
         return bookmark;
       });
     }
-
-    console.log(
-      "handleModalOk - > resultBookmarkList: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    );
-    console.log("resultBookmarkList", resultBookmarkList);
 
     // 북마스크 추가 및 수정
     localStorage.setItem("bookmarks", JSON.stringify(resultBookmarkList));
@@ -144,7 +135,7 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
   return (
     <Modal
       title={
-        modalStatus === ModalStatus.UPDATE ? "Bookmark 수정" : "Bookmark 추가"
+        modalStatus === ModalStatus.UPDATE ? "북마크 수정" : "북마크 추가"
       }
       open={ModalStatus.CLOSE !== modalStatus}
       onOk={handleModalOk}
@@ -163,7 +154,7 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
         </Form.Item>
         <Form.Item
           name="title"
-          label="Title"
+          label="사이트명"
           rules={[
             {
               required: true,
@@ -206,7 +197,7 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
         </Form.Item>
         <Form.Item
           name="favicon"
-          label="Favicon"
+          label="Favicon URL"
           rules={[
             {
               required: true,
@@ -227,7 +218,7 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
         </Form.Item>
         <Form.Item
           name="category"
-          label="Category"
+          label="카테고리"
           rules={[
             {
               required: true,

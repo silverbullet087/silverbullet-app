@@ -5,16 +5,16 @@
     margin-left: -30px;
     width: auto;
   }
-  
+
   .my-masonry-grid_column {
     padding-left: 30px;
     background-clip: padding-box;
   }
-  
+
   .my-masonry-grid_column > div {
     margin-bottom: 30px;
   }
-  
+
   .link-button {
     background: none;
     border: none;
@@ -24,3 +24,13 @@
     text-decoration: underline;
     color: inherit;
   }
+
+.checkbox-group-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.checkbox-group-container .ant-checkbox-group-item {
+    margin-right: 8px; /* 체크박스 사이의 간격을 조절하려면 값을 변경하세요 */
+    white-space: nowrap;
+}

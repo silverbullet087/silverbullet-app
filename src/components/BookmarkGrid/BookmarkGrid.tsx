@@ -1,7 +1,7 @@
 import React from "react";
 import Masonry from "react-masonry-css";
 import "./BookmarkGrid.css";
-import {Card, Menu, Dropdown, MenuProps} from "antd";
+import {Card, Menu, Dropdown, MenuProps, Tooltip} from "antd";
 import {
     CaretDownOutlined,
     PlusOutlined,
@@ -72,12 +72,20 @@ const BookmarkGrid: React.FC<BookmarkGridProps> = ({
                     e.target.src = './no-image-icon-23485.png';
                 }
 
+                function TooltipWrapper(content: string) {
+                    return (
+                        <Tooltip placement="topRight" title={content} arrow>
+                            {content}
+                        </Tooltip>
+                    )
+                }
+
                 return (
                     <>
                         <Card
                             key={bookmark.id}
                             size="small"
-                            title={bookmark.title}
+                            title={TooltipWrapper(bookmark.title)}
                             extra={
                                 <>
                                     <Dropdown menu={{items}}>
@@ -92,8 +100,12 @@ const BookmarkGrid: React.FC<BookmarkGridProps> = ({
                         >
                             <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
                                 <a href={bookmark.url} target="_blank">
-                                    <img src={bookmark.favicon} alt="favicon" width={'30px'} onError={handleImgError}/>
-                                    <p>{bookmark.category}</p>
+                                    <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+                                        <img src={bookmark.favicon} alt="favicon" width={'30px'} onError={handleImgError} />
+                                    </div>
+                                    <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+                                        <p>{bookmark.category}</p>
+                                    </div>
                                 </a>
                             </div>
                         </Card>

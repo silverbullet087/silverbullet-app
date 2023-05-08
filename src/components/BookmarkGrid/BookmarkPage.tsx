@@ -87,49 +87,56 @@ const bookmarkList: Bookmark[] = [
         title: "Stack Overflow",
         url: "https://stackoverflow.com",
         favicon: "https://stackoverflow.com/favicon.ico",
-        category: "Development",
+        category: "개발",
     },
     {
         id: 104,
         title: "Angular",
         url: "https://angular.io/",
         favicon: "https://angular.io/assets/images/favicons/favicon.ico",
-        category: "Development",
+        category: "개발",
     },
     {
         id: 105,
         title: "React",
         url: "https://reactjs.org/",
         favicon: "https://reactjs.org/favicon.ico",
-        category: "Development",
+        category: "개발",
     },
     {
         id: 106,
         title: "Vue",
         url: "https://vuejs.org/",
         favicon: "https://vuejs.org/logo.svg",
-        category: "Development",
+        category: "개발",
     },
     {
         id: 107,
         title: "Anguler Material UI",
         url: "https://material.angular.io/",
         favicon: "https://material.angular.io/favicon.ico",
-        category: "Development",
+        category: "개발",
     },
     {
         id: 107,
         title: "React Material UI",
         url: "https://mui.com/material-ui/react-masonry/",
         favicon: "https://material-ui.com/favicon.ico",
-        category: "Development",
+        category: "개발",
     },
     {
         id: 108,
         title: "React Ant Design",
         url: "https://ant.design/",
         favicon: "https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png",
-        category: "Development",
+        category: "개발",
+    },
+    {
+        id: 109,
+        title: "Netlify",
+        url: "https://app.netlify.com/",
+        favicon: "https://app.netlify.com/favicon.ico",
+        category: "개발",
     },
     // AI
     {
@@ -411,18 +418,19 @@ const BookmarkPage: React.FC = () => {
                         type={sortKey === "title" ? "primary" : "default"}
                         onClick={() => onSortButtonClick("title")}
                     >
-                        <span>Title</span>
-                        {sortOrder === "asc" ? <UpOutlined/> : <DownOutlined/>}
+                        <span>사이트명순</span>
+                        {sortOrder === "asc" && sortKey === "title" ? <UpOutlined/> : <DownOutlined/>}
                     </Button>
                     <Button
                         type={sortKey === "category" ? "primary" : "default"}
                         onClick={() => onSortButtonClick("category")}
                     >
-                        <span>Category</span>
-                        {sortOrder === "asc" ? <UpOutlined/> : <DownOutlined/>}
+                        <span>카테고리순</span>
+                        {sortOrder === "asc" && sortKey === "category" ? <UpOutlined/> : <DownOutlined/>}
                     </Button>
                 </Space>
                 <Checkbox.Group
+                    className="checkbox-group-container"
                     options={categories}
                     value={selectedCategories}
                     onChange={onCategoryChange}
