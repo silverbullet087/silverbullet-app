@@ -9,14 +9,23 @@ import Title from "antd/lib/typography/Title";
 
 const {Header, Content, Sider} = Layout;
 
+const DEFAULT_LIGHT_COLOR_PRIMARY = '#673ab7';
+const DEFAULT_DARK_COLOR_PRIMARY = '#9c27b0';
+
 function App() {
+
     const [selectedMenuItem, setSelectedMenuItem] = useState("home");
-    const [darkTheme, setDarkTheme] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(localStorage.getItem("darkTheme") === null ? false : JSON.parse(localStorage.getItem("darkTheme") ?? ''));
 
     const history = useHistory();
 
+    const [colorPrimary, setColorPrimary] = useState(localStorage.getItem("colorPrimary") === null ? DEFAULT_LIGHT_COLOR_PRIMARY : localStorage.getItem("colorPrimary") ?? DEFAULT_LIGHT_COLOR_PRIMARY);
+
     const handleThemeChange = (checked: boolean) => {
         setDarkTheme(checked);
+        setColorPrimary(checked ? DEFAULT_DARK_COLOR_PRIMARY : DEFAULT_LIGHT_COLOR_PRIMARY);
+        localStorage.setItem("darkTheme", checked.toString());
+        localStorage.setItem("colorPrimary", checked ? DEFAULT_DARK_COLOR_PRIMARY : DEFAULT_LIGHT_COLOR_PRIMARY);
     };
 
     const handleMenuItemClick = (e: any) => {
@@ -43,6 +52,9 @@ function App() {
     return (
         <ConfigProvider
             theme={{
+                token: {
+                    colorPrimary: colorPrimary,
+                },
                 algorithm: darkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
             }}
         >
@@ -70,7 +82,7 @@ function App() {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "space-between",
-                                backgroundColor: darkTheme ? "#001529" : "#fff",
+                                backgroundColor: colorPrimary ?? DEFAULT_LIGHT_COLOR_PRIMARY,
                             }}
                         >
                             <Space

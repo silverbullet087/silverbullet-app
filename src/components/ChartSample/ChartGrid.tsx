@@ -33,56 +33,58 @@ const ChartGrid: React.FC<ChartGridProps> = ({}) => {
             >
                 <MonthlyExchangeProfitChart/>
             </Card>
-            <Card
-                // size="small"
-                title={'월별 환차익 수익률 차트'}
-                style={{
-                    width: "100%",
-                    marginBottom: 16,
-                }}
-            >
-                <MonthlyExchangeProfitChart/>
-            </Card>
-            <Card
-                // size="small"
-                title={'월별 환차익 수익률 차트'}
-                style={{
-                    width: "100%",
-                    marginBottom: 16,
-                }}
-            >
-                <MonthlyExchangeProfitChart/>
-            </Card>
-            <Card
-                // size="small"
-                title={'월별 환차익 수익률 차트'}
-                style={{
-                    width: "100%",
-                    marginBottom: 16,
-                }}
-            >
-                <MonthlyExchangeProfitChart/>
-            </Card>
-            <Card
-                // size="small"
-                title={'월별 환차익 수익률 차트'}
-                style={{
-                    width: "100%",
-                    marginBottom: 16,
-                }}
-            >
-                <MonthlyExchangeProfitChart/>
-            </Card>
-            <Card
-                // size="small"
-                title={'월별 환차익 수익률 차트'}
-                style={{
-                    width: "100%",
-                    marginBottom: 16,
-                }}
-            >
-                <MonthlyExchangeProfitChart/>
-            </Card>
+
+            {/*<Card*/}
+            {/*    // size="small"*/}
+            {/*    title={'월별 환차익 수익률 차트'}*/}
+            {/*    style={{*/}
+            {/*        width: "100%",*/}
+            {/*        marginBottom: 16,*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    <MonthlyExchangeProfitChart/>*/}
+            {/*</Card>*/}
+            {/*<Card*/}
+            {/*    // size="small"*/}
+            {/*    title={'월별 환차익 수익률 차트'}*/}
+            {/*    style={{*/}
+            {/*        width: "100%",*/}
+            {/*        marginBottom: 16,*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    <MonthlyExchangeProfitChart/>*/}
+            {/*</Card>*/}
+            {/*<Card*/}
+            {/*    // size="small"*/}
+            {/*    title={'월별 환차익 수익률 차트'}*/}
+            {/*    style={{*/}
+            {/*        width: "100%",*/}
+            {/*        marginBottom: 16,*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    <MonthlyExchangeProfitChart/>*/}
+            {/*</Card>*/}
+            {/*<Card*/}
+            {/*    // size="small"*/}
+            {/*    title={'월별 환차익 수익률 차트'}*/}
+            {/*    style={{*/}
+            {/*        width: "100%",*/}
+            {/*        marginBottom: 16,*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    <MonthlyExchangeProfitChart/>*/}
+            {/*</Card>*/}
+            {/*<Card*/}
+            {/*    // size="small"*/}
+            {/*    title={'월별 환차익 수익률 차트'}*/}
+            {/*    style={{*/}
+            {/*        width: "100%",*/}
+            {/*        marginBottom: 16,*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    <MonthlyExchangeProfitChart/>*/}
+            {/*</Card>*/}
+
         </Masonry>
     );
 };
