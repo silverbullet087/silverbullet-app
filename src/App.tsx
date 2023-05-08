@@ -1,27 +1,23 @@
 import React, {useState} from "react";
-import {Layout, Menu} from "antd";
-import {
-    FileImageOutlined,
-    HomeOutlined,
-    BookOutlined,
-} from "@ant-design/icons";
+import {Layout, Menu, Space, Button, ConfigProvider, theme, Switch as AntSwitch} from "antd";
 import Viewer from "./components/Viewer/Viewer";
 import BookmarkPage from "./components/BookmarkGrid/BookmarkPage";
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-    useHistory,
-} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
 import SidebarMenu from "./components/menu/SidebarMenu";
 import ChartSamplePage from "./components/ChartSample/ChartSamplePage";
+import Title from "antd/lib/typography/Title";
 
 const {Header, Content, Sider} = Layout;
 
 function App() {
     const [selectedMenuItem, setSelectedMenuItem] = useState("home");
+    const [darkTheme, setDarkTheme] = useState(false);
 
     const history = useHistory();
+
+    const handleThemeChange = (checked: boolean) => {
+        setDarkTheme(checked);
+    };
 
     const handleMenuItemClick = (e: any) => {
         setSelectedMenuItem(e.key);
@@ -45,34 +41,69 @@ function App() {
     };
 
     return (
-        <Router>
-            <Layout style={{minHeight: "100vh"}}>
-                <Sider breakpoint="lg" collapsedWidth="0">
-                    <div style={{height: "32px", margin: "16px"}}/>
-                    <Menu
-                        theme="dark"
-                        mode="inline"
-                        selectedKeys={[selectedMenuItem]}
-                        onClick={handleMenuItemClick}
-                    >
-                        <SidebarMenu/>
-                    </Menu>
-                </Sider>
-                <Layout>
-                    <Header style={{background: "#fff", padding: 0}}/>
-                    <Content style={{margin: "24px 16px 0"}}>
-                        <div style={{padding: 24, minHeight: 360}}>
-                            <Switch>
-                                <Route exact path="/" component={BookmarkPage}/>
-                                <Route path="/viewer" component={Viewer}/>
-                                <Route path="/bookmarks" component={BookmarkPage}/>
-                                <Route path="/chartSample" component={ChartSamplePage}/>
-                            </Switch>
+        <ConfigProvider
+            theme={{
+                algorithm: darkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
+            }}
+        >
+            <Router>
+                <Layout style={{minHeight: "100vh"}}>
+                    <Sider breakpoint="lg" collapsedWidth="0" theme={darkTheme ? "dark" : "light"}>
+                        <div style={{height: "32px", margin: "16px"}}>
+                            <Title level={3} style={{color: darkTheme ? "#fff" : "#001529"}}>
+                                GOMI-APP
+                            </Title>
                         </div>
-                    </Content>
+                        <Menu
+                            theme={darkTheme ? "dark" : "light"}
+                            mode="inline"
+                            selectedKeys={[selectedMenuItem]}
+                            onClick={handleMenuItemClick}
+                        >
+                            <SidebarMenu/>
+                        </Menu>
+                    </Sider>
+                    <Layout>
+                        <Header
+                            style={{
+                                padding: "0 16px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "space-between",
+                                backgroundColor: darkTheme ? "#001529" : "#fff",
+                            }}
+                        >
+                            <Space
+                                size="large"
+                                style={{width: "100%", justifyContent: "space-between"}}
+                            >
+                                <Title
+                                    level={3}
+                                    style={{color: darkTheme ? "#fff" : "#001529"}}
+                                ></Title>
+                                <AntSwitch
+                                    checkedChildren="Dark"
+                                    unCheckedChildren="Light"
+                                    onChange={handleThemeChange}
+                                    defaultChecked={darkTheme}
+                                />
+                            </Space>
+                        </Header>
+                        <Content style={{margin: "24px 16px 0"}}>
+                            <div style={{padding: 24, minHeight: 360}}>
+                                <Switch>
+                                    <Route exact path="/" component={BookmarkPage}/>
+                                    <Route path="/viewer" component={Viewer}/>
+                                    <Route path="/bookmarks" component={BookmarkPage}/>
+                                    <Route path="/chartSample" component={ChartSamplePage}/>
+                                </Switch>
+                            </div>
+                        </Content>
+                    </Layout>
                 </Layout>
-            </Layout>
-        </Router>
+            </Router>
+        </ConfigProvider>
+
     );
 }
 
