@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image, Row, Col, Drawer, Button, Upload, message } from "antd";
 import JSZip from "jszip";
+import ThemedTitle from "../../common/components/ThemedTitle";
 
 interface ImageViewerProps {
   images?: string[];
@@ -80,7 +81,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
 
   return (
     <>
-      <h1>만화책 뷰어</h1>
+      <ThemedTitle title={'만화책 뷰어'}/>
       <Upload.Dragger
         accept=".zip"
         customRequest={({ file }) => handleUpload(file as File)}

@@ -21,6 +21,8 @@ import {
 import {ModalStatus} from "../Common/Constants";
 import type {Bookmark} from "../Common/Constants";
 import BookmarkSaveModal from "./BookmarkSaveModal";
+import Title from "antd/lib/typography/Title";
+import ThemedTitle from "../../common/components/ThemedTitle";
 
 // 초기 설정 북마크 리스트 데이터 하드코딩 (추후 수정 예정)
 const bookmarkList: Bookmark[] = [
@@ -407,7 +409,7 @@ const BookmarkPage: React.FC = () => {
 
     return (
         <>
-            <h1>북마크</h1>
+            <ThemedTitle title={'북마크'}/>
             <Space
                 className="controlPanel"
                 direction="vertical"

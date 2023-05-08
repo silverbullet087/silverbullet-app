@@ -62,9 +62,11 @@ function App() {
                 <Layout style={{minHeight: "100vh"}}>
                     <Sider breakpoint="lg" collapsedWidth="0" theme={darkTheme ? "dark" : "light"}>
                         <div style={{height: "32px", margin: "16px"}}>
-                            <Title level={3} style={{color: darkTheme ? "#fff" : "#001529"}}>
-                                GOMI-APP
-                            </Title>
+                            <a href="/">
+                                <Title level={3} style={{color: darkTheme ? "#fff" : "#001529"}}>
+                                    GOMI-APP
+                                </Title>
+                            </a>
                         </div>
                         <Menu
                             theme={darkTheme ? "dark" : "light"}
