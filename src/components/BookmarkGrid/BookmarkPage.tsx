@@ -144,7 +144,7 @@ const bookmarkList: Bookmark[] = [
     {
         id: 200,
         title: "chatgpt",
-        url: "https://www.chatbotgpt.com/",
+        url: "https://openai.com/blog/chatgpt/",
         favicon: "https://chat.openai.com/favicon-32x32.png",
         category: "AI",
     },
