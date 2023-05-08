@@ -1,0 +1,27 @@
+.my-masonry-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -30px;
+    width: auto;
+}
+
+.my-masonry-grid_column {
+    padding-left: 30px;
+    background-clip: padding-box;
+    float: left;
+}
+
+.my-masonry-grid_column > div {
+    margin-bottom: 30px;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    color: inherit;
+}

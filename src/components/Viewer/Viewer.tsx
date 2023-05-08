@@ -80,6 +80,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
 
   return (
     <>
+      <h1>만화책 뷰어</h1>
       <Upload.Dragger
         accept=".zip"
         customRequest={({ file }) => handleUpload(file as File)}
