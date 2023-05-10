@@ -12,7 +12,7 @@ interface ChartGridProps {
 const ChartGrid: React.FC<ChartGridProps> = ({}) => {
     const breakpointColumnsObj = {
         default: 3,
-        1100: 3,
+        1100: 2,
         700: 2,
         500: 1
     };
