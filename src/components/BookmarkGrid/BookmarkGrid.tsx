@@ -51,7 +51,7 @@ const BookmarkGrid: React.FC<BookmarkGridProps> = ({
                                 className="link-button"
                                 onClick={() => onUpdateBookmark(bookmark)}
                             >
-                                Edit
+                                수정
                             </button>
                         ),
                     },
@@ -62,7 +62,7 @@ const BookmarkGrid: React.FC<BookmarkGridProps> = ({
                                 className="link-button"
                                 onClick={() => onDeleteBookmark(bookmark?.id ?? 0)}
                             >
-                                Delete
+                                삭제
                             </button>
                         ),
                     },

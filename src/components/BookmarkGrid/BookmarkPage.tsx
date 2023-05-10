@@ -24,6 +24,24 @@ import BookmarkSaveModal from "./BookmarkSaveModal";
 import Title from "antd/lib/typography/Title";
 import ThemedTitle from "../../common/components/ThemedTitle";
 
+// 전체 삭제시 초기값 세팅 하드코딩
+const initialbookmarkList: Bookmark[] = [
+    {
+        id: 1,
+            title: "Google",
+        url: "https://www.google.com",
+        favicon: "https://www.google.com/favicon.ico",
+        category: "검색",
+    },
+    {
+        id: 2,
+            title: "Naver",
+        url: "https://www.naver.com/",
+        favicon: "https://www.naver.com/favicon.ico",
+        category: "검색",
+    },
+];
+
 // 초기 설정 북마크 리스트 데이터 하드코딩 (추후 수정 예정)
 const bookmarkList: Bookmark[] = [
     // 검색
@@ -174,6 +192,13 @@ const bookmarkList: Bookmark[] = [
         title: "huggingface",
         url: "https://huggingface.co/",
         favicon: "https://huggingface.co/favicon.ico",
+        category: "AI",
+    },
+    {
+        id: 206,
+        title: "google keep",
+        url: "https://keep.google.com/u/0/#label/AI",
+        favicon: "https://ssl.gstatic.com/keep/icon_2020q4v2_128.png",
         category: "AI",
     },
     // 번역
@@ -386,6 +411,17 @@ const BookmarkPage: React.FC = () => {
         setBookmarks(updatedBookmarks);
     };
 
+    const onBookmarkLocalStorageDeleteButtonClick = () => {
+        localStorage.setItem("bookmarks", JSON.stringify(initialbookmarkList));
+        setBookmarks(initialbookmarkList);
+    }
+
+    // 북마크 초기값으로 초기화 버튼 이벤트
+    const onBookmarkLocalStorageInitButtonClick = () => {
+        localStorage.setItem("bookmarks", JSON.stringify(bookmarkList));
+        setBookmarks(bookmarkList);
+    }
+
     // 카테고리 체크박스 선택 필터링, 정렬 적용한 북마크 리스트
     const filteredBookmarks = useMemo(() => {
         let filtered = bookmarks.filter((bookmark: Bookmark) =>
@@ -429,6 +465,16 @@ const BookmarkPage: React.FC = () => {
                     >
                         <span>카테고리순</span>
                         {sortOrder === "asc" && sortKey === "category" ? <UpOutlined/> : <DownOutlined/>}
+                    </Button>
+                    <Button
+                        onClick={() => onBookmarkLocalStorageInitButtonClick()}
+                    >
+                        <span>초기화</span>
+                    </Button>
+                    <Button
+                        onClick={() => onBookmarkLocalStorageDeleteButtonClick()}
+                    >
+                        <span>전체 삭제</span>
                     </Button>
                 </Space>
                 <Checkbox.Group
