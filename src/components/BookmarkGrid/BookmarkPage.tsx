@@ -1,46 +1,13 @@
-import React, {useState, useMemo, useEffect} from "react";
+import React, {useMemo, useState} from "react";
 import BookmarkGrid from "./BookmarkGrid";
-import {
-    Button,
-    Checkbox,
-    Space,
-    Modal,
-    Form,
-    Input,
-    Dropdown,
-    Menu,
-    Radio,
-} from "antd";
+import {Button, Checkbox, Space,} from "antd";
 import type {CheckboxValueType} from "antd/lib/checkbox/Group";
-import {UpOutlined, DownOutlined} from "@ant-design/icons";
-import {
-    CaretDownOutlined,
-    PlusOutlined,
-    EllipsisOutlined,
-} from "@ant-design/icons";
-import {ModalStatus} from "../Common/Constants";
+import {DownOutlined, UpOutlined} from "@ant-design/icons";
 import type {Bookmark} from "../Common/Constants";
+import {ModalStatus} from "../Common/Constants";
 import BookmarkSaveModal from "./BookmarkSaveModal";
-import Title from "antd/lib/typography/Title";
 import ThemedTitle from "../../common/components/ThemedTitle";
-
-// 전체 삭제시 초기값 세팅 하드코딩
-const initialbookmarkList: Bookmark[] = [
-    {
-        id: 1,
-            title: "Google",
-        url: "https://www.google.com",
-        favicon: "https://www.google.com/favicon.ico",
-        category: "검색",
-    },
-    {
-        id: 2,
-            title: "Naver",
-        url: "https://www.naver.com/",
-        favicon: "https://www.naver.com/favicon.ico",
-        category: "검색",
-    },
-];
+import BookmarkUploadButton from "./BookmarkUploadButton";
 
 // 초기 설정 북마크 리스트 데이터 하드코딩 (추후 수정 예정)
 const bookmarkList: Bookmark[] = [
@@ -365,8 +332,6 @@ const BookmarkPage: React.FC = () => {
     const [modalStatus, setModalStatus] = useState(ModalStatus.CLOSE);
     // 모달창에서 선택된 북마크 정보 관리
     const [currentBookmark, setCurrentBookmark] = useState<Bookmark | null>(null);
-    // 모달창 열린지 여부 (true: 열림, false: 닫힘)
-    const isModalOpen = modalStatus !== ModalStatus.CLOSE;
 
     // 체크박스 카테고리 선택 시 필터링
     const onCategoryChange = (checkedValues: CheckboxValueType[]) => {
@@ -412,14 +377,32 @@ const BookmarkPage: React.FC = () => {
     };
 
     const onBookmarkLocalStorageDeleteButtonClick = () => {
-        localStorage.setItem("bookmarks", JSON.stringify(initialbookmarkList));
-        setBookmarks(initialbookmarkList);
+        localStorage.setItem("bookmarks", JSON.stringify([]));
+        setBookmarks([]);
     }
 
     // 북마크 초기값으로 초기화 버튼 이벤트
     const onBookmarkLocalStorageInitButtonClick = () => {
         localStorage.setItem("bookmarks", JSON.stringify(bookmarkList));
         setBookmarks(bookmarkList);
+    }
+
+    // 북마크 다운로드
+    const onBookmarkDownload = () => {
+        const data = localStorage.getItem('bookmarks');
+        if (data) {
+            const jsonData = JSON.stringify(JSON.parse(data), null, 2);
+            const blob = new Blob([jsonData], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+
+            // 가상의 <a> 태그를 생성하고 클릭 이벤트를 발생시킵니다.
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'bookmark.json'; // 원하는 파일명을 설정합니다.
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     }
 
     // 카테고리 체크박스 선택 필터링, 정렬 적용한 북마크 리스트
@@ -444,14 +427,14 @@ const BookmarkPage: React.FC = () => {
     }, [bookmarks, selectedCategories, sortKey, sortOrder]);
 
     return (
-        <>
+        <div className="bookmark-upload-container">
             <ThemedTitle title={'북마크'}/>
             <Space
                 className="controlPanel"
                 direction="vertical"
                 style={{marginBottom: 16}}
             >
-                <Space>
+                <Space className="button-group-container">
                     <Button
                         type={sortKey === "title" ? "primary" : "default"}
                         onClick={() => onSortButtonClick("title")}
@@ -467,15 +450,24 @@ const BookmarkPage: React.FC = () => {
                         {sortOrder === "asc" && sortKey === "category" ? <UpOutlined/> : <DownOutlined/>}
                     </Button>
                     <Button
+                        className="hide-on-mobile"
                         onClick={() => onBookmarkLocalStorageInitButtonClick()}
                     >
                         <span>초기화</span>
                     </Button>
                     <Button
+                        className="hide-on-mobile"
                         onClick={() => onBookmarkLocalStorageDeleteButtonClick()}
                     >
                         <span>전체 삭제</span>
                     </Button>
+                    <Button
+                        className="hide-on-mobile"
+                        onClick={() => onBookmarkDownload()}
+                    >
+                        <span>북마크 다운로드</span>
+                    </Button>
+                    <BookmarkUploadButton className="hide-on-mobile" setBookmarks={setBookmarks}/>
                 </Space>
                 <Checkbox.Group
                     className="checkbox-group-container"
@@ -494,13 +486,11 @@ const BookmarkPage: React.FC = () => {
                 currentBookmark={currentBookmark}
                 bookmarks={bookmarks}
                 modalStatus={modalStatus}
-                onAddBookmark={onAddBookmark}
-                onUpdateBookmark={onUpdateBookmark}
-                onDeleteBookmark={onDeleteBookmark}
+                categories={categories}
                 setBookmarks={setBookmarks}
                 setModalStatus={setModalStatus}
             />
-        </>
+        </div>
     );
 };
 

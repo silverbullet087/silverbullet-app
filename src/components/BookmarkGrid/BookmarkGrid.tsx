@@ -1,12 +1,8 @@
 import React from "react";
 import Masonry from "react-masonry-css";
-import "./BookmarkGrid.css";
-import {Card, Menu, Dropdown, MenuProps, Tooltip} from "antd";
-import {
-    CaretDownOutlined,
-    PlusOutlined,
-    EllipsisOutlined,
-} from "@ant-design/icons";
+import "./BookmarkGrid.scss";
+import {Card, Dropdown, MenuProps, Tooltip} from "antd";
+import {EllipsisOutlined, PlusOutlined,} from "@ant-design/icons";
 
 // Bookmark interface
 interface Bookmark {
@@ -68,7 +64,7 @@ const BookmarkGrid: React.FC<BookmarkGridProps> = ({
                     },
                 ];
 
-                const handleImgError = (e:any) => {
+                const handleImgError = (e: any) => {
                     e.target.src = './no-image-icon-23485.png';
                 }
 
@@ -98,12 +94,28 @@ const BookmarkGrid: React.FC<BookmarkGridProps> = ({
                                 marginBottom: 16,
                             }}
                         >
-                            <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+                            <div style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                justifyContent: "center"
+                            }}>
                                 <a href={bookmark.url} target="_blank">
-                                    <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-                                        <img src={bookmark.favicon} alt="favicon" width={'30px'} onError={handleImgError} />
+                                    <div style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        justifyContent: "center"
+                                    }}>
+                                        <img src={bookmark.favicon} alt="favicon" width={'30px'}
+                                             onError={handleImgError}/>
                                     </div>
-                                    <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+                                    <div style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        justifyContent: "center"
+                                    }}>
                                         <p>{bookmark.category}</p>
                                     </div>
                                 </a>

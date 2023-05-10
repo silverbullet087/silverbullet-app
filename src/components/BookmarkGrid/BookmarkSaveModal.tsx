@@ -1,14 +1,13 @@
-import React, {useCallback, useEffect, useState} from "react";
-import {Modal, Form, Input, message, FormInstance} from "antd";
+import React from "react";
+import {Form, FormInstance, Input, message, Modal} from "antd";
 import {Bookmark, ModalStatus} from "../Common/Constants";
+import CategoryInput from "./CategoryInput";
 
 interface BookmarkSaveModalProps {
     currentBookmark: Bookmark | null;
     bookmarks: Bookmark[];
     modalStatus: ModalStatus;
-    onAddBookmark: () => void;
-    onUpdateBookmark: (bookmark: Bookmark) => void;
-    onDeleteBookmark: (id: number) => void;
+    categories: string[];
     setBookmarks: (bookmarks: Bookmark[]) => void;
     setModalStatus: (modalStatus: ModalStatus) => void;
 }
@@ -17,9 +16,7 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
                                                                  currentBookmark,
                                                                  bookmarks,
                                                                  modalStatus,
-                                                                 onAddBookmark,
-                                                                 onUpdateBookmark,
-                                                                 onDeleteBookmark,
+                                                                 categories,
                                                                  setBookmarks,
                                                                  setModalStatus,
                                                              }) => {
@@ -55,6 +52,9 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
      */
     const handleModalOk = () => {
         let updatedBookmark = form.getFieldsValue();
+
+        console.log("updatedBookmark", updatedBookmark);
+
 
         // 예제
         checkValidation(form).then(isValid => {
@@ -237,7 +237,6 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
                     rules={[
                         {
                             required: true,
-                            whitespace: true,
                             message: "필수값 입니다.",
                         },
                         {
@@ -247,11 +246,14 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
                         },
                     ]}
                 >
-                    <Input
-                        name={"category"}
-                        placeholder="카테고리를 입력해 주세요."
-                        onChange={(e: any) => handleChange(e)}
-                    />
+                    <CategoryInput form={form} initCategories={categories}/>
+
+                    {/*<Input*/}
+                    {/*    name={"category"}*/}
+                    {/*    placeholder="카테고리를 입력해 주세요."*/}
+                    {/*    onChange={(e: any) => handleChange(e)}*/}
+                    {/*/>*/}
+
                 </Form.Item>
             </Form>
         </Modal>
