@@ -1,20 +1,17 @@
-import React, {MouseEvent, useRef, useState} from 'react';
-import type {InteractionItem} from 'chart.js';
+import React, {useState} from 'react';
 import {
-    Chart as ChartJS,
-    LinearScale,
-    CategoryScale,
-    BarElement,
-    PointElement,
-    LineElement,
-    Legend,
-    Tooltip,
     BarController,
-    LineController
+    BarElement,
+    CategoryScale,
+    Chart as ChartJS,
+    Legend,
+    LinearScale,
+    LineController,
+    LineElement,
+    PointElement,
+    Tooltip
 } from 'chart.js';
-import {
-    Chart
-} from 'react-chartjs-2';
+import {Chart} from 'react-chartjs-2';
 import ChartWrapper from "../../common/components/ChartWrapper";
 
 ChartJS.register(
@@ -117,7 +114,6 @@ const MonthlyExchangeProfitChart: React.FC<{}> = () => {
             <Chart type={'bar'} data={data} options={options}/>
         </ChartWrapper>
     );
-
 
 
 };

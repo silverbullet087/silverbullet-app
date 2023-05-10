@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {Menu} from "antd";
-import {FileImageOutlined, HomeOutlined, BookOutlined, BarChartOutlined} from "@ant-design/icons";
+import {BarChartOutlined, BookOutlined, FileImageOutlined, HomeOutlined} from "@ant-design/icons";
 
 const SidebarMenu: React.FC = () => {
     const [selectedMenuItem, setSelectedMenuItem] = useState("home");

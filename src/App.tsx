@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Layout, Menu, Space, Button, ConfigProvider, theme, Switch as AntSwitch} from "antd";
+import {ConfigProvider, Layout, Menu, Space, Switch as AntSwitch, theme} from "antd";
 import Viewer from "./components/Viewer/Viewer";
 import BookmarkPage from "./components/BookmarkGrid/BookmarkPage";
 import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";

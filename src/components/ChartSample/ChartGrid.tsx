@@ -1,8 +1,7 @@
 import React from "react";
 import "./ChartGrid.css";
 import MonthlyExchangeProfitChart from "./MonthlyExchangeProfitChart";
-import {Card, Dropdown} from "antd";
-import {EllipsisOutlined} from "@ant-design/icons";
+import {Card} from "antd";
 import Masonry from "react-masonry-css";
 
 interface ChartGridProps {
