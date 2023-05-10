@@ -158,6 +158,8 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
             open={ModalStatus.CLOSE !== modalStatus}
             onOk={handleModalOk}
             onCancel={handleModalCancel}
+            okText="등록"
+            cancelText="취소"
         >
             <Form
                 form={form}
@@ -217,11 +219,6 @@ const BookmarkSaveModal: React.FC<BookmarkSaveModalProps> = ({
                     name="favicon"
                     label="Favicon URL"
                     rules={[
-                        {
-                            required: true,
-                            whitespace: true,
-                            message: "필수값 입니다.",
-                        },
                         {
                             type: "url",
                             message: "url 형식이 잘못 되었습니다.",
