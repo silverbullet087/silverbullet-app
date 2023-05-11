@@ -54,6 +54,7 @@ function App() {
             theme={{
                 token: {
                     colorPrimary: colorPrimary,
+                    colorBgBase: darkTheme ? "#303030" : "#fafafa",
                 },
                 algorithm: darkTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
             }}
@@ -64,7 +65,7 @@ function App() {
                         <div style={{height: "32px", margin: "16px"}}>
                             <a href="/">
                                 <Title level={3} style={{color: darkTheme ? "#fff" : "#001529"}}>
-                                    GOMI-APP
+                                    DevLifeBoost
                                 </Title>
                             </a>
                         </div>
