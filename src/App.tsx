@@ -6,6 +6,7 @@ import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-d
 import SidebarMenu from "./components/menu/SidebarMenu";
 import ChartSamplePage from "./components/ChartSample/ChartSamplePage";
 import Title from "antd/lib/typography/Title";
+import SrtTranslationToolPage from "./components/SrtTranslationTool/SrtTranslationToolPage";
 
 const {Header, Content, Sider} = Layout;
 
@@ -43,6 +44,9 @@ function App() {
                 break;
             case "chartSample":
                 history.push("/chartSample");
+                break;
+            case "srtTranslationTool":
+                history.push("/srtTranslationTool");
                 break;
             default:
                 break;
@@ -111,6 +115,7 @@ function App() {
                                     <Route path="/viewer" component={Viewer}/>
                                     <Route path="/bookmarks" component={BookmarkPage}/>
                                     <Route path="/chartSample" component={ChartSamplePage}/>
+                                    <Route path="/srtTranslationTool" component={SrtTranslationToolPage}/>
                                 </Switch>
                             </div>
                         </Content>
