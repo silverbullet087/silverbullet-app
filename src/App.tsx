@@ -7,6 +7,8 @@ import SidebarMenu from "./components/menu/SidebarMenu";
 import ChartSamplePage from "./components/ChartSample/ChartSamplePage";
 import Title from "antd/lib/typography/Title";
 import SrtTranslationToolPage from "./components/SrtTranslationTool/SrtTranslationToolPage";
+import HomePage from "./components/home/HomePage";
+import TypeIt from "typeit-react";
 
 const {Header, Content, Sider} = Layout;
 
@@ -69,7 +71,37 @@ function App() {
                         <div style={{height: "32px", margin: "16px"}}>
                             <a href="/">
                                 <Title level={3} style={{color: darkTheme ? "#fff" : "#001529"}}>
-                                    DevLifeBoost
+                                    <TypeIt
+                                        getBeforeInit={(instance) => {
+                                            instance
+                                                .delete(13, {instant: true})
+                                                .type("ㅇㄷㅍ")
+                                                .pause(400)
+                                                .delete(3)
+                                                .type("Dev")
+                                                .pause(360)
+                                                .type("Life")
+                                                .pause(560)
+                                                .pause(520/7)
+                                                .type("B")
+                                                .pause(210/7)
+                                                .type("o")
+                                                .pause(72/8)
+                                                .type("o")
+                                                .pause(410/7)
+                                                .type("s")
+                                                .pause(80/8)
+                                                .type("t")
+                                            ;
+
+                                            // Remember to return it!
+                                            return instance;
+                                        }}
+
+                                    >
+                                    </TypeIt>
+
+                                    {/*DevLifeBoost*/}
                                 </Title>
                             </a>
                         </div>
@@ -111,7 +143,7 @@ function App() {
                         <Content style={{margin: "24px 16px 0"}}>
                             <div style={{padding: 24, minHeight: 360}}>
                                 <Switch>
-                                    <Route exact path="/" component={BookmarkPage}/>
+                                    <Route exact path="/" component={HomePage}/>
                                     <Route path="/viewer" component={Viewer}/>
                                     <Route path="/bookmarks" component={BookmarkPage}/>
                                     <Route path="/chartSample" component={ChartSamplePage}/>

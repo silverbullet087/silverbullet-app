@@ -259,15 +259,22 @@ const bookmarkList: Bookmark[] = [
     {
         id: 600,
         title: "실버블렛스톡",
-        url: "http://silverbulletstock.com/",
-        favicon: "",
+        url: "https://silverbulletstock.com/",
+        favicon: "https://silverbulletstock.netlify.app/assets/icons/ms-icon-144x144.png",
         category: "토이 프로젝트",
     },
     {
         id: 601,
-        title: "Gomi App",
+        title: "DevLifeBoost",
         url: "https://gomi-app.netlify.app/",
         favicon: "https://gomi-app.netlify.app/favicon.ico",
+        category: "토이 프로젝트",
+    },
+    {
+        id: 602,
+        title: "Sample Test HTML",
+        url: "https://sampletesthtml.netlify.app/",
+        favicon: "https://sampletesthtml.netlify.app/favicon.ico",
         category: "토이 프로젝트",
     },
     // 주식
@@ -306,6 +313,69 @@ const bookmarkList: Bookmark[] = [
         favicon: "https://www.portfoliovisualizer.com/favicon.ico",
         category: "주식",
     },
+    // 취미
+    {
+        id: 800,
+        title: "anilife",
+        url: "https://anilife.live/",
+        favicon: "https://anilife.live/img/icons//favicon-144x144.png",
+        category: "취미",
+    },
+    {
+        id: 801,
+        title: "만화토끼",
+        url: "https://t.me/s/newtoki5",
+        favicon: "https://telegram.org/img/favicon.ico",
+        category: "취미",
+    },
+    // 디자인
+    {
+        id: 900,
+        title: "dribbble",
+        url: "https://dribbble.com/",
+        favicon: "https://cdn.dribbble.com/assets/favicon-b38525134603b9513174ec887944bde1a869eb6cd414f4d640ee48ab2a15a26b.ico",
+        category: "디자인",
+    },
+    {
+        id: 901,
+        title: "TypeIt",
+        url: "https://www.typeitjs.com/",
+        favicon: "https://www.typeitjs.com/favicon-32x32.png?v=f1d753dd1ac636c44873ee19264ce4a8",
+        category: "디자인",
+    },
+    {
+        id: 902,
+        title: "ScrollOut",
+        url: "https://scroll-out.github.io/",
+        favicon: "https://scroll-out.github.io/favicon.ico",
+        category: "디자인",
+    },
+    {
+        id: 903,
+        title: "animejs",
+        url: "https://animejs.com/",
+        favicon: "https://animejs.com/documentation/assets/img/favicon.png",
+        category: "디자인",
+    },
+    {
+        id: 904,
+        title: "rellaxjs",
+        url: "https://yaireo.github.io/rellax/",
+        favicon: "https://yaireo.github.io/rellax/favicon.png",
+        category: "디자인",
+    },
+    {
+        id: 904,
+        title: "GreenSock",
+        url: "https://greensock.com/",
+        favicon: "https://greensock.com/uploads/monthly_2018_06/favicon.ico.4811a987b377f271db584b422f58e5a7.ico",
+        category: "디자인",
+    },
+
+
+
+
+
 
 ];
 

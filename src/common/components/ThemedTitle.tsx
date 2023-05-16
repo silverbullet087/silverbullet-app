@@ -1,5 +1,6 @@
 import React from 'react';
 import {theme, Typography} from 'antd';
+import TypeIt from "typeit-react";
 
 const {Title} = Typography;
 
@@ -13,7 +14,9 @@ const ThemedTitle: React.FC<ThemedTitleProps> = ({title}) => {
 
     return (
         <Title style={{color: token.colorPrimary}}>
-            {title}
+            <TypeIt>
+                {title}
+            </TypeIt>
         </Title>
     );
 };
