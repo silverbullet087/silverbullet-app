@@ -40,11 +40,19 @@ const bookmarkList: Bookmark[] = [
         favicon: "https://www.bing.com/favicon.ico",
         category: "검색",
     },
+    // 동영상
     {
-        id: 5,
+        id: 10,
         title: "Youtube",
         url: "https://www.youtube.com/",
         favicon: "https://www.youtube.com/favicon.ico",
+        category: "동영상",
+    },
+    {
+        id: 11,
+        title: "NETFLIX",
+        url: "https://www.netflix.com/kr/",
+        favicon: "https://www.netflix.com/kr/favicon.ico",
         category: "동영상",
     },
     // 개발
