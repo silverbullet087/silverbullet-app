@@ -30,27 +30,29 @@ const HomePage = () => {
         <Layout>
             <div style={{marginBottom: '10px'}}>
                 <ThemedTitle title={'DevLifeBoost'}/>
-                <TypeIt
-                    getBeforeInit={(instance) => {
-                        instance
-                            .type("<strong>'Dev'</strong>").pause(506)
-                            .type("는 개발자를,").pause(450)
-                            .type(" <strong>'Life'</strong>").pause(844)
-                            .type("sms dlf").pause(335).delete(7).pause(450)
-                            .type("는 일상 생활을, ").pause(450)
-                            .type("<strong>'Boost'</strong>").pause(536)
-                            .type("sms gidtkddlsk rotjsdmf").pause(450)
-                            .pause(750).delete(23).pause(500)
-                            .type("는 향상이나 개선을 의미합니다. ").pause(400)
-                            .type("해당 사이트는 개발자의 일상 생활을 향상시키는 도구를 제공합니다.").pause(600)
-                        ;
+                <Title level={4}>
+                    <TypeIt
+                        getBeforeInit={(instance) => {
+                            instance
+                                .type("<strong>'Dev'</strong>").pause(506)
+                                .type("는 개발자를,").pause(450)
+                                .type(" <strong>'Life'</strong>").pause(844)
+                                .type("sms dlf").pause(335).delete(7).pause(450)
+                                .type("는 일상 생활을, ").pause(450)
+                                .type("<strong>'Boost'</strong>").pause(536)
+                                .type("sms gidtkddlsk rotjsdmf").pause(450)
+                                .pause(750).delete(23).pause(500)
+                                .type("는 향상이나 개선을 의미합니다. ").pause(400)
+                                .type("해당 사이트는 개발자의 일상 생활을 향상시키는 도구를 제공합니다.").pause(600)
+                            ;
 
-                        // Remember to return it!
-                        return instance;
-                    }}
+                            // Remember to return it!
+                            return instance;
+                        }}
 
-                >
-                </TypeIt>
+                    >
+                    </TypeIt>
+                </Title>
             </div>
             <div>
                 <Title level={2}>

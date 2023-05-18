@@ -81,12 +81,6 @@ const MonthlyExchangeProfitChart: React.FC<{}> = () => {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: '월'
-                }
-            },
             'y-a': {
                 type: 'linear',
                 position: 'left',
