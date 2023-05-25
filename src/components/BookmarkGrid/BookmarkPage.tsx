@@ -242,6 +242,7 @@ const bookmarkList: Bookmark[] = [
         category: "생산성",
     },
     // 자기개발
+    /*
     {
         id: 500,
         title: "실버블렛 Insights",
@@ -256,6 +257,7 @@ const bookmarkList: Bookmark[] = [
         favicon: "https://blog.naver.com/favicon.ico?3",
         category: "자기개발",
     },
+    */
     {
         id: 502,
         title: "공부블로그(Notion)",
