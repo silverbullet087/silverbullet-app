@@ -2,7 +2,7 @@ import React, {useMemo, useState} from "react";
 import BookmarkGrid from "./BookmarkGrid";
 import {Button, Checkbox, Space,} from "antd";
 import type {CheckboxValueType} from "antd/lib/checkbox/Group";
-import {DownOutlined, UpOutlined} from "@ant-design/icons";
+import {DownOutlined, DownloadOutlined, UpOutlined} from "@ant-design/icons";
 import type {Bookmark} from "../Common/Constants";
 import {ModalStatus} from "../Common/Constants";
 import BookmarkSaveModal from "./BookmarkSaveModal";
@@ -133,6 +133,135 @@ const bookmarkList: Bookmark[] = [
         favicon: "https://app.netlify.com/favicon.ico",
         category: "개발",
     },
+
+    // 신규추가
+    {
+        "id": 921,
+        "title": "npm Trends",
+        "url": "https://npmtrends.com/",
+        "favicon": "https://npmtrends.com/favicon.ico",
+        "category": "개발"
+    },
+    {
+        "id": 922,
+        "title": "Fakerjs",
+        "url": "https://next.fakerjs.dev/",
+        "favicon": "https://next.fakerjs.dev/logo.svg",
+        "category": "개발"
+    },
+    {
+        "id": 923,
+        "title": "React Native Paper",
+        "url": "https://callstack.github.io/react-native-paper/",
+        "favicon": "https://callstack.github.io/react-native-paper/images/favicon.ico",
+        "category": "개발"
+    },
+    {
+        "id": 924,
+        "title": "Figma",
+        "url": "https://www.figma.com/",
+        "favicon": "https://static.figma.com/app/icon/1/favicon.ico",
+        "category": "개발"
+    },
+    {
+        "id": 925,
+        "title": "v0 by Vercel",
+        "url": "https://v0.dev/",
+        "favicon": "https://v0.dev/icon-19iptc.svg?94ebf4f1268986e0",
+        "category": "AI"
+    },
+    {
+        "id": 926,
+        "title": "MDN Web Docs",
+        "url": "https://developer.mozilla.org/ko/",
+        "favicon": "https://developer.mozilla.org/favicon-48x48.cbbd161b.png",
+        "category": "개발"
+    },
+    {
+        "id": 927,
+        "title": "QT Documentation",
+        "url": "https://doc.qt.io/",
+        "favicon": "https://d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon.ico.gzip",
+        "category": "개발"
+    },
+    {
+        "id": 928,
+        "title": "CSS-Tricks",
+        "url": "https://css-tricks.com/",
+        "favicon": "https://css-tricks.com/favicon.ico",
+        "category": "개발"
+    },
+    {
+        "id": 929,
+        "title": "Mock Service Worker",
+        "url": "https://mswjs.io/",
+        "favicon": "https://mswjs.io/icon.svg",
+        "category": "개발"
+    },
+    {
+        "id": 930,
+        "title": "Typescriptlang",
+        "url": "https://www.typescriptlang.org/",
+        "favicon": "https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae",
+        "category": "개발"
+    },
+    {
+        "id": 931,
+        "title": "MDN Web Docs - JavaScript",
+        "url": "https://developer.mozilla.org/ko/docs/Web/JavaScript",
+        "favicon": "https://developer.mozilla.org/favicon-48x48.cbbd161b.png",
+        "category": "개발"
+    },
+    {
+        "id": 932,
+        "title": "Codecademy",
+        "url": "https://www.codecademy.com/",
+        "favicon": "https://www.codecademy.com/favicon.ico",
+        "category": "개발"
+    },
+    {
+        "id": 933,
+        "title": "CodePen",
+        "url": "https://codepen.io/",
+        "favicon": "https://cpwebassets.codepen.io/assets/favicon/favicon-touch-de50acbf5d634ec6791894eba4ba9cf490f709b3d742597c6fc4b734e6492a5a.png",
+        "category": "개발"
+    },
+    {
+        "id": 934,
+        "title": "Smashing Magazine",
+        "url": "https://www.smashingmagazine.com/",
+        "favicon": "https://www.smashingmagazine.com/images/favicon/favicon.ico",
+        "category": "개발"
+    },
+    {
+        "id": 935,
+        "title": "Frontend Mentor",
+        "url": "https://www.frontendmentor.io/",
+        "favicon": "https://www.frontendmentor.io/static/favicon/apple-touch-icon.png",
+        "category": "개발"
+    },
+    {
+        "id": 936,
+        "title": "SASS 공식 웹사이트",
+        "url": "https://sass-lang.com/",
+        "favicon": "https://sass-lang.com/favicon.ico",
+        "category": "개발"
+    },
+    {
+        "id": 937,
+        "title": "Khan Academy",
+        "url": "https://www.khanacademy.org/",
+        "favicon": "https://cdn.kastatic.org/images/favicon.ico?logo",
+        "category": "개발"
+    },
+
+
+
+
+
+
+
+
     // AI
     {
         id: 200,
@@ -256,7 +385,7 @@ const bookmarkList: Bookmark[] = [
         url: "https://blog.naver.com/grinby21",
         favicon: "https://blog.naver.com/favicon.ico?3",
         category: "자기개발",
-    },
+    },기
     */
     {
         id: 502,
@@ -276,8 +405,8 @@ const bookmarkList: Bookmark[] = [
     {
         id: 601,
         title: "DevLifeBoost",
-        url: "https://gomi-app.netlify.app/",
-        favicon: "https://gomi-app.netlify.app/favicon.ico",
+        url: "https://devlifeboost.netlify.app/",
+        favicon: "https://devlifeboost.netlify.app/favicon.ico",
         category: "토이 프로젝트",
     },
     {
@@ -544,6 +673,7 @@ const BookmarkPage: React.FC = () => {
                     <Button
                         className="hide-on-mobile"
                         onClick={() => onBookmarkDownload()}
+                        icon={<DownloadOutlined />}
                     >
                         <span>북마크 다운로드</span>
                     </Button>
