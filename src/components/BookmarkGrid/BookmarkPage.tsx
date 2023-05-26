@@ -2,7 +2,7 @@ import React, {useMemo, useState} from "react";
 import BookmarkGrid from "./BookmarkGrid";
 import {Button, Checkbox, Space,} from "antd";
 import type {CheckboxValueType} from "antd/lib/checkbox/Group";
-import {DownOutlined, UpOutlined} from "@ant-design/icons";
+import {DownOutlined, DownloadOutlined, UpOutlined} from "@ant-design/icons";
 import type {Bookmark} from "../Common/Constants";
 import {ModalStatus} from "../Common/Constants";
 import BookmarkSaveModal from "./BookmarkSaveModal";
@@ -256,7 +256,7 @@ const bookmarkList: Bookmark[] = [
         url: "https://blog.naver.com/grinby21",
         favicon: "https://blog.naver.com/favicon.ico?3",
         category: "자기개발",
-    },
+    },기
     */
     {
         id: 502,
@@ -276,8 +276,8 @@ const bookmarkList: Bookmark[] = [
     {
         id: 601,
         title: "DevLifeBoost",
-        url: "https://gomi-app.netlify.app/",
-        favicon: "https://gomi-app.netlify.app/favicon.ico",
+        url: "https://devlifeboost.netlify.app/",
+        favicon: "https://devlifeboost.netlify.app/favicon.ico",
         category: "토이 프로젝트",
     },
     {
@@ -544,6 +544,7 @@ const BookmarkPage: React.FC = () => {
                     <Button
                         className="hide-on-mobile"
                         onClick={() => onBookmarkDownload()}
+                        icon={<DownloadOutlined />}
                     >
                         <span>북마크 다운로드</span>
                     </Button>
