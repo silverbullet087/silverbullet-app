@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {Menu} from "antd";
-import {BarChartOutlined, BookOutlined, FileImageOutlined, HomeOutlined, TranslationOutlined} from "@ant-design/icons";
+import {BarChartOutlined, BookOutlined, FileImageOutlined, HomeOutlined, TranslationOutlined, CodeOutlined} from "@ant-design/icons";
 
 const SidebarMenu: React.FC = () => {
     const [selectedMenuItem, setSelectedMenuItem] = useState("home");
@@ -26,6 +26,10 @@ const SidebarMenu: React.FC = () => {
             case "srtTranslationTool":
                 history.push("/srtTranslationTool");
                 break;
+            case "codeGenerator":
+                history.push("/codeGenerator");
+                break;
+
             default:
                 break;
         }
@@ -52,6 +56,9 @@ const SidebarMenu: React.FC = () => {
             </Menu.Item>
             <Menu.Item key="srtTranslationTool" icon={<TranslationOutlined/>}>
                 자막 번역 도구
+            </Menu.Item>
+            <Menu.Item key="codeGenerator" icon={<CodeOutlined />}>
+                코드 생성 툴
             </Menu.Item>
         </Menu>
     );

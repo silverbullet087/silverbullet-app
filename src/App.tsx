@@ -7,6 +7,7 @@ import SidebarMenu from "./components/menu/SidebarMenu";
 import ChartSamplePage from "./components/ChartSample/ChartSamplePage";
 import Title from "antd/lib/typography/Title";
 import SrtTranslationToolPage from "./components/SrtTranslationTool/SrtTranslationToolPage";
+import CodeGeneratorPage from "./components/CodeGenerator/CodeGeneratorPage";
 import HomePage from "./components/home/HomePage";
 import TypeIt from "typeit-react";
 
@@ -148,6 +149,7 @@ function App() {
                                     <Route path="/bookmarks" component={BookmarkPage}/>
                                     <Route path="/chartSample" component={ChartSamplePage}/>
                                     <Route path="/srtTranslationTool" component={SrtTranslationToolPage}/>
+                                    <Route path="/codeGenerator" component={CodeGeneratorPage}/>
                                 </Switch>
                             </div>
                         </Content>

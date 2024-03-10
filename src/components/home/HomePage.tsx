@@ -24,6 +24,10 @@ const HomePage = () => {
             title: '자막 번역 도구',
             description: 'DevLifeBoost의 자막 번역 도구는 파파고, deepl, 구글 번역 등의 번역 서비스에서 제공하는 5,000자 제한을 넘는 번역을 사용할 때 사용합니다. 이 도구는 웹사이트에 자막 내용을 임시로 업로드하고, 웹 브라우저의 번역 기능을 이용하여 글자 수 제한 없이 번역합니다. 번역한 내용은 자막 파일로 받을 수 있어, 매우 편리합니다.'
         },
+        {
+            title: '코드 생성기',
+            description: '코드 생성기는 Java, TypeScript 등의 코드를 생성하는 도구입니다. create DDL SQL을 입력하면, Java DTO 클래스를 생성하고. TypeScript interface을 생성합니다.'
+        }
     ];
 
     return (
