@@ -18,7 +18,7 @@ const ChartWrapper = ({children, className, style}: ChartWrapperProps) => {
     return (
         // 차트를 포장하여 레이아웃을 제어하는 div
         <div className="chart-container" style={{position: 'relative', height: '400px', width: '100%'}}>
-            {children}  // 차트 컴포넌트 렌더링
+            {children}
         </div>
     );
 };

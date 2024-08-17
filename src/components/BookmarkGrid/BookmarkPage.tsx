@@ -498,9 +498,9 @@ const bookmarkList: Bookmark[] = [
 	},
 	{
 		id: 604,
-		title: "에셋싱크",
-		url: "https://assetsync.netlify.app",
-		favicon: "//assetsync.netlify.app/vite.svg",
+		title: "네오포트폴리오",
+		url: "https://neoport.netlify.app/",
+		favicon: "//neoport.netlify.app/favicon.ico",
 		category: "토이 프로젝트",
 	},
 	{
