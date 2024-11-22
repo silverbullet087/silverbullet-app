@@ -1,6 +1,6 @@
 import {Button, Input, Typography} from 'antd';
 import React, {useState} from 'react';
-import ThemedTitle from "../../common/components/ThemedTitle";
+import ThemedTitle from "../../components/ThemedTitle";
 
 const {Title, Text} = Typography;
 

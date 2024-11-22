@@ -1,6 +1,6 @@
 import React from "react";
 import {Form, FormInstance, Input, message, Modal} from "antd";
-import {Bookmark, ModalStatus} from "../Common/Constants";
+import {Bookmark, ModalStatus} from "../../constants/Constants";
 import CategoryInput from "./CategoryInput";
 
 interface BookmarkSaveModalProps {

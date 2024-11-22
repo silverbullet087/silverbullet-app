@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Card, Descriptions, Layout, Modal, Typography} from 'antd';
-import ThemedTitle from "../../common/components/ThemedTitle";
+import ThemedTitle from "../../components/ThemedTitle";
 import TypeIt from "typeit-react";
 
 const {Header, Content} = Layout;

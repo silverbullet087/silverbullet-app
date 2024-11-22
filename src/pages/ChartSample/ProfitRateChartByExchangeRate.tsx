@@ -12,7 +12,7 @@ import {
     Tooltip
 } from 'chart.js';
 import {Chart} from 'react-chartjs-2';
-import ChartWrapper from "../../common/components/ChartWrapper";
+import ChartWrapper from "../../components/ChartWrapper";
 
 ChartJS.register(
     LinearScale,
@@ -26,7 +26,7 @@ ChartJS.register(
     LineController
 );
 
-const MonthlyExchangeHistoryChart: React.FC<{}> = () => {
+const ProfitRateChartByExchangeRate: React.FC<{}> = () => {
     const labels = ['2022-01', '2022-02', '2022-03', '2022-04', '2022-05', '2022-06', '2022-07', '2022-08', '2022-09', '2022-10', '2022-11', '2022-12'];
     const [data, setData] = useState({
         labels: labels,
@@ -49,14 +49,12 @@ const MonthlyExchangeHistoryChart: React.FC<{}> = () => {
             borderColor: 'rgba(255, 195, 0, 1)',
             backgroundColor: 'rgba(255, 195, 0, 0.9)',
             yAxisID: 'y-a',
-            type: 'line' as const,
-            fill: false,
         },
             {
-                label: '환전 원화',
-                data: [1000000, 2000000, 1500000, 1800000, 2500000, 2200000, 1000000, 2000000, 1500000, 1800000, 2500000, 2200000], // 환전 원화 데이터
-                borderColor: 'rgba(72, 207, 173, 1)',
-                backgroundColor: 'rgba(72, 207, 173, 0.8)',
+                label: '수익률',
+                data: [0.55, 0.50, 0.45, 0.40, 0.43, 0.38, 0.25, 0.20, 0.15, 0.32, 0.46, 0.58], // 수익률 데이터
+                borderColor: 'rgba(237, 85, 101, 1)',
+                backgroundColor: 'rgba(237, 85, 101, 0.8)',
                 yAxisID: 'y-b',
             }]
     });
@@ -72,14 +70,22 @@ const MonthlyExchangeHistoryChart: React.FC<{}> = () => {
                     display: true,
                     text: '환율'
                 },
-                min: -0,
+                min: 0,
             },
             'y-b': {
                 type: 'linear',
                 position: 'right',
                 title: {
                     display: true,
-                    text: '환전 원화'
+                    text: '수익률'
+                },
+                ticks: {
+                    callback: (value: any, index: any, values: any) => {
+                        return value * 100 + '%';
+                    }
+                },
+                grid: {
+                    drawOnChartArea: false
                 }
             }
         }
@@ -87,11 +93,11 @@ const MonthlyExchangeHistoryChart: React.FC<{}> = () => {
 
     return (
         <ChartWrapper>
-            <Chart type={'bar'} data={data} options={options}/>
+            <Chart type={'line'} data={data} options={options}/>
         </ChartWrapper>
     );
 
 
 };
 
-export default MonthlyExchangeHistoryChart;
+export default ProfitRateChartByExchangeRate;

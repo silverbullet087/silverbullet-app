@@ -12,7 +12,7 @@ import {
     Tooltip
 } from 'chart.js';
 import {Chart} from 'react-chartjs-2';
-import ChartWrapper from "../../common/components/ChartWrapper";
+import ChartWrapper from "../../components/ChartWrapper";
 
 ChartJS.register(
     LinearScale,
@@ -26,15 +26,18 @@ ChartJS.register(
     LineController
 );
 
-const PortfolioTop5ReturnChart: React.FC<{}> = () => {
+const SectorReturnRateChart: React.FC<{}> = () => {
     const labels = [
-        'SPY', 'SPYD', 'AAPL', 'QQQ', 'MSFT'
-    ]; // 종목 라벨 (예: ['삼성전자', 'SK하이닉스', ...]);
+        'ETF',
+        '기술',
+        '자유소비재',
+        '통신서비스',
+    ]; // 섹터
     const [data, setData] = useState({
         labels: labels,
         datasets: [{
             label: '수익률',
-            data: [0.80, 0.65, 0.40, 0.25, 0.10], // 수익률 데이터
+            data: [0.30, 0.60, 0.30, 0.25], // 수익률 데이터
             borderColor: 'rgba(72, 207, 173, 1)',
             backgroundColor: 'rgba(72, 207, 173, 0.8)',
         }]
@@ -43,15 +46,18 @@ const PortfolioTop5ReturnChart: React.FC<{}> = () => {
     const options: any = {
         responsive: true,
         maintainAspectRatio: false,
-        indexAxis: 'y', // This will make the Horizontal Bar Chart
         scales: {
-            xAxes: [{
+            yAxes: [{
                 ticks: {
                     beginAtZero: true,
-                }
+                    callback: (value: any, index: any, values: any) => {
+                        return value * 100 + '%';
+                    }
+                },
             }],
-            x: {
+            y: {
                 ticks: {
+                    beginAtZero: true,
                     callback: (value: any, index: any, values: any) => {
                         return value * 100 + '%';
                     }
@@ -60,7 +66,7 @@ const PortfolioTop5ReturnChart: React.FC<{}> = () => {
                     display: true,
                     text: '수익률'
                 }
-            },
+            }
         }
     }
 
@@ -73,4 +79,4 @@ const PortfolioTop5ReturnChart: React.FC<{}> = () => {
 
 };
 
-export default PortfolioTop5ReturnChart;
+export default SectorReturnRateChart;

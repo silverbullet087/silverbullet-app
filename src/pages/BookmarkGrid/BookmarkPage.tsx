@@ -1,12 +1,11 @@
 import React, {useMemo, useState} from "react";
+import {Bookmark, ModalStatus} from "../../constants/Constants";
 import BookmarkGrid from "./BookmarkGrid";
 import {Button, Checkbox, Space,} from "antd";
 import type {CheckboxValueType} from "antd/lib/checkbox/Group";
 import {DownOutlined, DownloadOutlined, UpOutlined} from "@ant-design/icons";
-import type {Bookmark} from "../Common/Constants";
-import {ModalStatus} from "../Common/Constants";
 import BookmarkSaveModal from "./BookmarkSaveModal";
-import ThemedTitle from "../../common/components/ThemedTitle";
+import ThemedTitle from "../../components/ThemedTitle";
 import BookmarkUploadButton from "./BookmarkUploadButton";
 
 // 초기 설정 북마크 리스트 데이터 하드코딩 (추후 수정 예정)

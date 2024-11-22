@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import {ConfigProvider, Layout, Menu, Space, Switch as AntSwitch, theme} from "antd";
-import Viewer from "./components/Viewer/Viewer";
-import BookmarkPage from "./components/BookmarkGrid/BookmarkPage";
+import BookmarkPage from "./pages/BookmarkGrid/BookmarkPage";
+import Viewer from "./pages/Viewer/Viewer";
 import {BrowserRouter as Router, Route, Switch, useHistory} from "react-router-dom";
-import SidebarMenu from "./components/menu/SidebarMenu";
-import ChartSamplePage from "./components/ChartSample/ChartSamplePage";
+import SidebarMenu from "./pages/menu/SidebarMenu";
+import ChartSamplePage from "./pages/ChartSample/ChartSamplePage";
 import Title from "antd/lib/typography/Title";
-import SrtTranslationToolPage from "./components/SrtTranslationTool/SrtTranslationToolPage";
-import CodeGeneratorPage from "./components/CodeGenerator/CodeGeneratorPage";
-import HomePage from "./components/home/HomePage";
+import SrtTranslationToolPage from "./pages/SrtTranslationTool/SrtTranslationToolPage";
+import CodeGeneratorPage from "./pages/CodeGenerator/CodeGeneratorPage";
+import HomePage from "./pages/home/HomePage";
 import TypeIt from "typeit-react";
 
 const {Header, Content, Sider} = Layout;

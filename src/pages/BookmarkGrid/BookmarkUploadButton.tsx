@@ -2,7 +2,7 @@ import React from 'react';
 import {UploadOutlined} from '@ant-design/icons';
 import {Button, message, Upload} from 'antd';
 import {RcFile} from "antd/es/upload";
-import {Bookmark} from "../Common/Constants";
+import {Bookmark} from "../../constants/Constants";
 
 interface BookmarkUploadButtonProps {
     setBookmarks: (bookmarkList: Bookmark[]) => void;

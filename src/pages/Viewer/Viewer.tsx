@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {Image, message, Upload} from "antd";
 import JSZip from "jszip";
-import ThemedTitle from "../../common/components/ThemedTitle";
+import ThemedTitle from "../../components/ThemedTitle";
 
 interface ImageViewerProps {
     images?: string[];

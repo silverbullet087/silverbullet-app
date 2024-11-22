@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Input} from 'antd';
 import {saveAs} from 'file-saver';
 import {Typography} from 'antd';
-import ThemedTitle from "../../common/components/ThemedTitle";
+import ThemedTitle from "../../components/ThemedTitle";
 
 const {Title, Text} = Typography;
 
