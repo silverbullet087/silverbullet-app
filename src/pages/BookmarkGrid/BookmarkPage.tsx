@@ -499,7 +499,7 @@ const bookmarkList: Bookmark[] = [
 		id: 604,
 		title: "네오포트폴리오",
 		url: "https://neoport.netlify.app/",
-		favicon: "//neoport.netlify.app/favicon.ico",
+		favicon: "https://neoport.netlify.app/assets/icons/apple-touch-icon-144x144.png",
 		category: "토이 프로젝트",
 	},
 	{
@@ -509,8 +509,20 @@ const bookmarkList: Bookmark[] = [
 		favicon: "https://discovernewpaths.netlify.app/vite.svg",
 		category: "토이 프로젝트"
 	},
-
-
+	{
+		id: 606,
+		title: "로또빵",
+		url: "https://lotto-bbang.netlify.app/",
+		favicon: "https://lotto-bbang.netlify.app/logo192.png",
+		category: "토이 프로젝트"
+	},
+	{
+		id: 607,
+		title: "부자비밀카드",
+		url: "https://rich-secret-card.netlify.app",
+		favicon: "https://rich-secret-card.netlify.app/logo192.png",
+		category: "토이 프로젝트"
+	},
 	/** 주식 700~799 */
 	{
 		id: 701,
