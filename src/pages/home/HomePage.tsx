@@ -27,6 +27,10 @@ const HomePage = () => {
         {
             title: '코드 생성기',
             description: '코드 생성기는 Java, TypeScript 등의 코드를 생성하는 도구입니다. create DDL SQL을 입력하면, Java DTO 클래스를 생성하고. TypeScript interface을 생성합니다.'
+        },
+        {
+            title: 'DDL to JSON',
+            description: '데이터베이스 테이블 DDL을 입력하면 JSON 샘플 데이터를 자동으로 생성하는 도구입니다. 각 컬럼의 데이터 타입에 맞는 샘플 값을 생성하며, 단일 객체와 배열 형태 모두 제공합니다. INT, VARCHAR, DATE, BOOLEAN, JSON 등 다양한 데이터 타입을 지원하고, NULL 값과 기본값도 고려하여 실제와 유사한 테스트 데이터를 생성합니다. 생성된 JSON은 API 개발이나 프론트엔드 개발 시 목업 데이터로 활용할 수 있습니다.'
         }
     ];
 
