@@ -523,6 +523,27 @@ const bookmarkList: Bookmark[] = [
 		favicon: "https://rich-secret-card.netlify.app/logo192.png",
 		category: "토이 프로젝트"
 	},
+	{
+		id: 608,
+		title: "답토끼",
+		url: "https://daptokki.replit.app",
+		favicon: "https://daptokki.replit.app/icons/icon-144x144.png",
+		category: "토이 프로젝트"
+	},
+	{
+		id: 609,
+		title: "밥픽!",
+		url: "https://bappick.replit.app",
+		favicon: "https://bappick.replit.app/icon-192.png",
+		category: "토이 프로젝트"
+	},
+	{
+		id: 610,
+		title: "낸다커피",
+		url: "https://nendacoffee.replit.app",
+		favicon: "https://nendacoffee.replit.app/icon-512.png",
+		category: "토이 프로젝트"
+	},
 	/** 주식 700~799 */
 	{
 		id: 701,
