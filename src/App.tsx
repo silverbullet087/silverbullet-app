@@ -10,6 +10,7 @@ import SrtTranslationToolPage from "./pages/SrtTranslationTool/SrtTranslationToo
 import CodeGeneratorPage from "./pages/CodeGenerator/CodeGeneratorPage";
 import HomePage from "./pages/home/HomePage";
 import DdlToJsonPage from "./pages/ddlToJson/DdlToJsonPage";
+import SelectToJavaDtoPage from "./pages/selectToJavaDto/SelectToJavaDtoPage";
 import TypeIt from "typeit-react";
 
 const {Header, Content, Sider} = Layout;
@@ -57,6 +58,9 @@ function App() {
                 break;
             case "ddlToJson":
                 history.push("/ddlToJson");
+                break;
+            case "selectToJavaDto":
+                history.push("/selectToJavaDto");
                 break;
             default:
                 break;
@@ -158,6 +162,7 @@ function App() {
                                     <Route path="/srtTranslationTool" component={SrtTranslationToolPage}/>
                                     <Route path="/codeGenerator" component={CodeGeneratorPage}/>
                                     <Route path="/ddlToJson" component={DdlToJsonPage}/>
+                                    <Route path="/selectToJavaDto" component={SelectToJavaDtoPage}/>
                                 </Switch>
                             </div>
                         </Content>

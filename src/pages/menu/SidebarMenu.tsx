@@ -32,6 +32,9 @@ const SidebarMenu: React.FC = () => {
             case "ddlToJson":
                 history.push("/ddlToJson");
                 break;
+            case "selectToJavaDto":
+                history.push("/selectToJavaDto");
+                break;
 
             default:
                 break;
@@ -65,6 +68,9 @@ const SidebarMenu: React.FC = () => {
             </Menu.Item>
             <Menu.Item key="ddlToJson" icon={<DatabaseOutlined />}>
                 DDL to JSON
+            </Menu.Item>
+            <Menu.Item key="selectToJavaDto" icon={<CodeOutlined />}>
+                SELECT to Java DTO
             </Menu.Item>
         </Menu>
     );

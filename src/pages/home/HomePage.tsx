@@ -31,6 +31,10 @@ const HomePage = () => {
         {
             title: 'DDL to JSON',
             description: '데이터베이스 테이블 DDL을 입력하면 JSON 샘플 데이터를 자동으로 생성하는 도구입니다. 각 컬럼의 데이터 타입에 맞는 샘플 값을 생성하며, 단일 객체와 배열 형태 모두 제공합니다. INT, VARCHAR, DATE, BOOLEAN, JSON 등 다양한 데이터 타입을 지원하고, NULL 값과 기본값도 고려하여 실제와 유사한 테스트 데이터를 생성합니다. 생성된 JSON은 API 개발이나 프론트엔드 개발 시 목업 데이터로 활용할 수 있습니다.'
+        },
+        {
+            title: 'SELECT to Java DTO',
+            description: 'SELECT 쿼리를 입력하면 Java DTO 클래스를 자동으로 생성하는 도구입니다. 쿼리의 SELECT 절을 분석하여 필드명과 타입을 추론하고, Lombok 어노테이션이나 getter/setter 메소드를 자동으로 생성합니다. 컬럼명은 자동으로 camelCase로 변환되며, 컬럼명에 따라 적절한 Java 타입(String, Long, BigDecimal, LocalDateTime, Boolean 등)을 추론합니다. 또한 Bean Validation 어노테이션 추가 옵션도 제공하여, 바로 사용 가능한 DTO 클래스를 생성할 수 있습니다.'
         }
     ];
 
