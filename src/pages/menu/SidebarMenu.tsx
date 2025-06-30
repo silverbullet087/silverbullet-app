@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {Menu} from "antd";
-import {BarChartOutlined, BookOutlined, FileImageOutlined, HomeOutlined, TranslationOutlined, CodeOutlined, DatabaseOutlined} from "@ant-design/icons";
+import {BarChartOutlined, BookOutlined, FileImageOutlined, HomeOutlined, TranslationOutlined, CodeOutlined, DatabaseOutlined, FileTextOutlined} from "@ant-design/icons";
 
 const SidebarMenu: React.FC = () => {
     const [selectedMenuItem, setSelectedMenuItem] = useState("home");
@@ -37,6 +37,9 @@ const SidebarMenu: React.FC = () => {
                 break;
             case "springCrudGenerator":
                 history.push("/springCrudGenerator");
+                break;
+            case "jspJqueryTemplate":
+                history.push("/jspJqueryTemplate");
                 break;
 
             default:
@@ -77,6 +80,9 @@ const SidebarMenu: React.FC = () => {
             </Menu.Item>
             <Menu.Item key="springCrudGenerator" icon={<CodeOutlined />}>
                 Spring CRUD Generator
+            </Menu.Item>
+            <Menu.Item key="jspJqueryTemplate" icon={<FileTextOutlined />}>
+                JSP jQuery Template
             </Menu.Item>
         </Menu>
     );

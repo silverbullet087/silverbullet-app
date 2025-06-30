@@ -39,6 +39,10 @@ const HomePage = () => {
         {
             title: 'Spring CRUD Generator',
             description: 'DDL을 입력하면 Spring MVC 기반의 전체 CRUD 코드를 자동으로 생성하는 도구입니다. Controller, Service, DAO, DTO, MyBatis XML 파일을 한번에 생성하며, RESTful API 엔드포인트(리스트 조회, 상세 조회, 등록, 수정, 삭제)가 포함됩니다. 기본 템플릿을 제공하며, 프로젝트에 맞게 템플릿을 커스터마이징할 수 있습니다. 테이블명과 컬럼명을 분석하여 적절한 클래스명, 변수명, 필드명으로 자동 변환하고, MyBatis 동적 쿼리도 자동으로 생성됩니다.'
+        },
+        {
+            title: 'JSP jQuery Template',
+            description: 'JSP + jQuery 개발 시 반복적인 코드 작성을 자동화하는 도구입니다. 10가지 기본 템플릿(기본 레이아웃, 목록 페이지, 폼, AJAX 함수, 모달 등)을 제공하며, 키워드 기반으로 템플릿을 커스터마이징할 수 있습니다. 체크박스로 필요한 템플릿만 선택하고, 키워드를 설정하면 자동으로 코드가 생성됩니다. 템플릿은 localStorage에 저장되어 개인화된 설정을 유지할 수 있으며, 단순 반복 업무를 크게 줄일 수 있습니다.'
         }
     ];
 
