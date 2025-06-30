@@ -9,6 +9,7 @@ import Title from "antd/lib/typography/Title";
 import SrtTranslationToolPage from "./pages/SrtTranslationTool/SrtTranslationToolPage";
 import CodeGeneratorPage from "./pages/CodeGenerator/CodeGeneratorPage";
 import HomePage from "./pages/home/HomePage";
+import DdlToJsonPage from "./pages/ddlToJson/DdlToJsonPage";
 import TypeIt from "typeit-react";
 
 const {Header, Content, Sider} = Layout;
@@ -50,6 +51,12 @@ function App() {
                 break;
             case "srtTranslationTool":
                 history.push("/srtTranslationTool");
+                break;
+            case "codeGenerator":
+                history.push("/codeGenerator");
+                break;
+            case "ddlToJson":
+                history.push("/ddlToJson");
                 break;
             default:
                 break;
@@ -150,6 +157,7 @@ function App() {
                                     <Route path="/chartSample" component={ChartSamplePage}/>
                                     <Route path="/srtTranslationTool" component={SrtTranslationToolPage}/>
                                     <Route path="/codeGenerator" component={CodeGeneratorPage}/>
+                                    <Route path="/ddlToJson" component={DdlToJsonPage}/>
                                 </Switch>
                             </div>
                         </Content>

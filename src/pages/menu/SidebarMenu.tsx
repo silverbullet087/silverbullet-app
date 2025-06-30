@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import {Menu} from "antd";
-import {BarChartOutlined, BookOutlined, FileImageOutlined, HomeOutlined, TranslationOutlined, CodeOutlined} from "@ant-design/icons";
+import {BarChartOutlined, BookOutlined, FileImageOutlined, HomeOutlined, TranslationOutlined, CodeOutlined, DatabaseOutlined} from "@ant-design/icons";
 
 const SidebarMenu: React.FC = () => {
     const [selectedMenuItem, setSelectedMenuItem] = useState("home");
@@ -28,6 +28,9 @@ const SidebarMenu: React.FC = () => {
                 break;
             case "codeGenerator":
                 history.push("/codeGenerator");
+                break;
+            case "ddlToJson":
+                history.push("/ddlToJson");
                 break;
 
             default:
@@ -59,6 +62,9 @@ const SidebarMenu: React.FC = () => {
             </Menu.Item>
             <Menu.Item key="codeGenerator" icon={<CodeOutlined />}>
                 코드 생성 툴
+            </Menu.Item>
+            <Menu.Item key="ddlToJson" icon={<DatabaseOutlined />}>
+                DDL to JSON
             </Menu.Item>
         </Menu>
     );
