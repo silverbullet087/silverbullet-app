@@ -35,6 +35,10 @@ const HomePage = () => {
         {
             title: 'SELECT to Java DTO',
             description: 'SELECT 쿼리를 입력하면 Java DTO 클래스를 자동으로 생성하는 도구입니다. 쿼리의 SELECT 절을 분석하여 필드명과 타입을 추론하고, Lombok 어노테이션이나 getter/setter 메소드를 자동으로 생성합니다. 컬럼명은 자동으로 camelCase로 변환되며, 컬럼명에 따라 적절한 Java 타입(String, Long, BigDecimal, LocalDateTime, Boolean 등)을 추론합니다. 또한 Bean Validation 어노테이션 추가 옵션도 제공하여, 바로 사용 가능한 DTO 클래스를 생성할 수 있습니다.'
+        },
+        {
+            title: 'Spring CRUD Generator',
+            description: 'DDL을 입력하면 Spring MVC 기반의 전체 CRUD 코드를 자동으로 생성하는 도구입니다. Controller, Service, DAO, DTO, MyBatis XML 파일을 한번에 생성하며, RESTful API 엔드포인트(리스트 조회, 상세 조회, 등록, 수정, 삭제)가 포함됩니다. 기본 템플릿을 제공하며, 프로젝트에 맞게 템플릿을 커스터마이징할 수 있습니다. 테이블명과 컬럼명을 분석하여 적절한 클래스명, 변수명, 필드명으로 자동 변환하고, MyBatis 동적 쿼리도 자동으로 생성됩니다.'
         }
     ];
 

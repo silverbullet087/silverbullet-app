@@ -35,6 +35,9 @@ const SidebarMenu: React.FC = () => {
             case "selectToJavaDto":
                 history.push("/selectToJavaDto");
                 break;
+            case "springCrudGenerator":
+                history.push("/springCrudGenerator");
+                break;
 
             default:
                 break;
@@ -71,6 +74,9 @@ const SidebarMenu: React.FC = () => {
             </Menu.Item>
             <Menu.Item key="selectToJavaDto" icon={<CodeOutlined />}>
                 SELECT to Java DTO
+            </Menu.Item>
+            <Menu.Item key="springCrudGenerator" icon={<CodeOutlined />}>
+                Spring CRUD Generator
             </Menu.Item>
         </Menu>
     );

@@ -11,6 +11,7 @@ import CodeGeneratorPage from "./pages/CodeGenerator/CodeGeneratorPage";
 import HomePage from "./pages/home/HomePage";
 import DdlToJsonPage from "./pages/ddlToJson/DdlToJsonPage";
 import SelectToJavaDtoPage from "./pages/selectToJavaDto/SelectToJavaDtoPage";
+import SpringCrudGeneratorPage from "./pages/springCrudGenerator/SpringCrudGeneratorPage";
 import TypeIt from "typeit-react";
 
 const {Header, Content, Sider} = Layout;
@@ -61,6 +62,9 @@ function App() {
                 break;
             case "selectToJavaDto":
                 history.push("/selectToJavaDto");
+                break;
+            case "springCrudGenerator":
+                history.push("/springCrudGenerator");
                 break;
             default:
                 break;
@@ -163,6 +167,7 @@ function App() {
                                     <Route path="/codeGenerator" component={CodeGeneratorPage}/>
                                     <Route path="/ddlToJson" component={DdlToJsonPage}/>
                                     <Route path="/selectToJavaDto" component={SelectToJavaDtoPage}/>
+                                    <Route path="/springCrudGenerator" component={SpringCrudGeneratorPage}/>
                                 </Switch>
                             </div>
                         </Content>
