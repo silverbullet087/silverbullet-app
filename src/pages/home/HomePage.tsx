@@ -43,6 +43,10 @@ const HomePage = () => {
         {
             title: 'JSP jQuery Template',
             description: 'JSP + jQuery 개발 시 반복적인 코드 작성을 자동화하는 도구입니다. 10가지 기본 템플릿(기본 레이아웃, 목록 페이지, 폼, AJAX 함수, 모달 등)을 제공하며, 키워드 기반으로 템플릿을 커스터마이징할 수 있습니다. 체크박스로 필요한 템플릿만 선택하고, 키워드를 설정하면 자동으로 코드가 생성됩니다. 템플릿은 localStorage에 저장되어 개인화된 설정을 유지할 수 있으며, 단순 반복 업무를 크게 줄일 수 있습니다.'
+        },
+        {
+            title: 'Spring MVC Generator',
+            description: 'DDL을 입력하면 Spring MVC 패턴의 전체 계층 구조를 자동 생성하는 고급 도구입니다. API Controller, View Controller, Action Controller 3종의 컨트롤러와 Query/Command 분리된 Service, DTO(검증 어노테이션 포함), VO, MapStruct 매퍼, DAO, MyBatis XML, 그리고 JUnit 테스트 코드까지 총 11개 파일을 한번에 생성합니다. 템플릿 설정을 JSON으로 내보내기/불러오기할 수 있어 팀 단위로 표준화된 코드 템플릿을 공유하고 관리할 수 있으며, localStorage를 활용한 개인화 설정도 지원합니다.'
         }
     ];
 

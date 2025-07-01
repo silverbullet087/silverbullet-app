@@ -41,6 +41,9 @@ const SidebarMenu: React.FC = () => {
             case "jspJqueryTemplate":
                 history.push("/jspJqueryTemplate");
                 break;
+            case "springMvcGenerator":
+                history.push("/springMvcGenerator");
+                break;
 
             default:
                 break;
@@ -83,6 +86,9 @@ const SidebarMenu: React.FC = () => {
             </Menu.Item>
             <Menu.Item key="jspJqueryTemplate" icon={<FileTextOutlined />}>
                 JSP jQuery Template
+            </Menu.Item>
+            <Menu.Item key="springMvcGenerator" icon={<CodeOutlined />}>
+                Spring MVC Generator
             </Menu.Item>
         </Menu>
     );

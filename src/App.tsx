@@ -13,6 +13,7 @@ import DdlToJsonPage from "./pages/ddlToJson/DdlToJsonPage";
 import SelectToJavaDtoPage from "./pages/selectToJavaDto/SelectToJavaDtoPage";
 import SpringCrudGeneratorPage from "./pages/springCrudGenerator/SpringCrudGeneratorPage";
 import JspJqueryTemplateGeneratorPage from "./pages/jspJqueryTemplate/JspJqueryTemplateGeneratorPage";
+import SpringMvcGeneratorPage from "./pages/springMvcGenerator/SpringMvcGeneratorPage";
 import TypeIt from "typeit-react";
 
 const {Header, Content, Sider} = Layout;
@@ -69,6 +70,9 @@ function App() {
                 break;
             case "jspJqueryTemplate":
                 history.push("/jspJqueryTemplate");
+                break;
+            case "springMvcGenerator":
+                history.push("/springMvcGenerator");
                 break;
             default:
                 break;
@@ -173,6 +177,7 @@ function App() {
                                     <Route path="/selectToJavaDto" component={SelectToJavaDtoPage}/>
                                     <Route path="/springCrudGenerator" component={SpringCrudGeneratorPage}/>
                                     <Route path="/jspJqueryTemplate" component={JspJqueryTemplateGeneratorPage}/>
+                                    <Route path="/springMvcGenerator" component={SpringMvcGeneratorPage}/>
                                 </Switch>
                             </div>
                         </Content>
